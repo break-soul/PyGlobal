@@ -27,8 +27,6 @@ def get_translate(text: str) -> str:
     Returns:
         str: Translated text
     """
-    if (get_status() == True):
-        return GlobalDo.get_global_var("LANG_TRANSLATE", pre_translate)(text)
     return text
 
 def translate(text: str) -> str:
@@ -44,4 +42,4 @@ def translate(text: str) -> str:
     if (get_status() == True):
         pre_translate(text)
         return text
-    return
+    return get_translate(text)
