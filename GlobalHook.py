@@ -30,8 +30,8 @@ def get_global(var, default=None):
     Returns:
         dict: Global variables
     """
-    if (check):
-        return check.get_global_var(var, default)
+    if (check != False):
+        return check.get_var(var, default)
     return environ.get(var, default)
 
 
@@ -43,6 +43,6 @@ def set_global(key, value):
         key (str): Key
         value (any): Value
     """
-    if (check):
-        check.get_global_dict[key] = value
+    if (check != False):
+        check.set_var(key, value)
     environ.get[key] = value
