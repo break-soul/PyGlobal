@@ -7,9 +7,12 @@ logger = getLogger("Global.GlobalData")
 
 def init_global_dict() -> dict:
     global global_dict
-    if global_dict != None:
-        logger.warning("Global dict has been initialized!")
-        return global_dict
+    try:
+        if global_dict != None:
+            logger.warning("Global dict has been initialized!")
+            return global_dict
+    except:
+        ...
     # init 
     global_dict = dict()
     global_dict["var"] = dict()
@@ -19,7 +22,9 @@ def init_global_dict() -> dict:
 
 def get_global_dict() -> dict:
     global global_dict
-    if global_dict == None:
+    try:
+        global_dict
+    except:
         logger.warning("Global dict has not been initialized!")
-        return init_global_dict()
+        init_global_dict()
     return global_dict
