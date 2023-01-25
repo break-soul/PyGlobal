@@ -3,9 +3,10 @@
 
 from .GlobalData import get_global_dict
 
+from typing import Any
 
 # region global var
-def get_global_var(key: str, default: str | None = None) -> str:
+def get_global_var(key: str, default: Any = None) -> Any:
     """
     获取全局变量
 
