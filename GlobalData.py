@@ -11,8 +11,7 @@ logger = getLogger("Global.GlobalData")
 def init_global_dict() -> dict[str, Any]:
     global global_dict
     try:
-        global_dict: dict[str, Any]
-        if global_dict != None:
+        if global_dict != None:  #type:ignore
             logger.warning("Global dict has been initialized!")
         else:
             logger.info("Global dict will init...")
@@ -23,13 +22,13 @@ def init_global_dict() -> dict[str, Any]:
         global_dict["var"] = dict()
         global_dict["lang"] = dict()
     finally:
-        return global_dict
+        return global_dict  #type:ignore
 
 
 def get_global_dict() -> dict[str, Any]:
     global global_dict
     try:
-        global_dict: dict[str, Any]
+        global_dict  #type:ignore
     except:
         logger.warning("Global dict has not been initialized!")
         init_global_dict()
